@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Haven — Nigeria's premier property platform. Visit us at Victoria Island, Lagos or send us a message.">
+  <title>Contact Us — Haven</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">Haven<span class="dot">●</span></a>
+      <ul class="navbar-links">
+        <li><a href="listings.html?type=sale">Buy</a></li>
+        <li><a href="listings.html?type=rent">Rent</a></li>
+        <li><a href="listings.html?type=new">New Developments</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="contact.html" class="active">About</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-outline">List Property</a>
+        <a href="#" class="navbar-signin">Sign In</a>
+      </div>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="listings.html?type=sale">Buy</a></li>
+    <li><a href="listings.html?type=rent">Rent</a></li>
+    <li><a href="listings.html?type=new">New Developments</a></li>
+    <li><a href="agents.html">Agents</a></li>
+    <li><a href="contact.html#about">About</a></li>
+  </ul>
+  <div class="mobile-nav-actions">
+    <a href="contact.html" class="btn btn-primary btn-full">List Property</a>
+    <a href="#" class="btn btn-outline btn-full">Sign In</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="container">
+    <span class="section-label">Get in Touch</span>
+    <h1>Get in Touch</h1>
+    <p style="font-family:'DM Sans',sans-serif;font-weight:300;color:#6B6B6B;">We're here to help you find your perfect property</p>
+  </div>
+</div>
+
+<!-- CONTACT LAYOUT -->
+<div class="container">
+  <div class="contact-layout">
+
+    <!-- LEFT: Info + Map -->
+    <div>
+      <div class="contact-info-cards">
+        <div class="contact-info-card fade-up">
+          <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div>
+            <div class="contact-info-label">Our Office</div>
+            <div class="contact-info-value">14 Adeola Odeku Street<br>Victoria Island, Lagos, Nigeria</div>
+          </div>
+        </div>
+        <div class="contact-info-card fade-up">
+          <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div>
+            <div class="contact-info-label">Call Us</div>
+            <div class="contact-info-value">+234 (0) 803 HAVEN 0<br>Mon–Fri: 8AM–6PM WAT</div>
+          </div>
+        </div>
+        <div class="contact-info-card fade-up">
+          <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div>
+            <div class="contact-info-label">Email Us</div>
+            <div class="contact-info-value">hello@haven.ng<br>We respond within 24 hours</div>
+          </div>
+        </div>
+        <div class="contact-info-card fade-up">
+          <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+          <div>
+            <div class="contact-info-label">WhatsApp</div>
+            <div class="contact-info-value">+234 803 HAVEN 0<br>Available 7 days a week</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7272!2d3.4219!3d6.4168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2d5e3de4c7%3A0x30e2b7e8f8e5a5f!2sAdeola+Odeku+Street%2C+Victoria+Island%2C+Lagos!5e0!3m2!1sen!2sng!4v1700000000001"
+          width="100%"
+          height="320"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Haven office location map"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact Form -->
+    <div>
+      <div class="contact-form-wrap fade-up">
+        <h2 class="contact-form-title">Send Us a Message</h2>
+        <form class="contact-form" data-validate id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-phone">Phone Number</label>
+            <input type="tel" id="contact-phone" name="phone" placeholder="+234 800 000 0000">
+          </div>
+          <div class="form-group">
+            <label for="contact-interest">I'm Interested In *</label>
+            <select id="contact-interest" name="interest" required>
+              <option value="">Select an option</option>
+              <option>Buying</option>
+              <option>Renting</option>
+              <option>Selling</option>
+              <option>Investment</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-budget">Budget / Price Range</label>
+            <select id="contact-budget" name="budget">
+              <option value="">Select a range</option>
+              <option>Under ₦50M</option>
+              <option>₦50M – ₦150M</option>
+              <option>₦150M – ₦500M</option>
+              <option>₦500M+</option>
+              <option>Rental Budget</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-location">Location Preference</label>
+            <input type="text" id="contact-location" name="location" placeholder="e.g. Lekki, Victoria Island, Maitama...">
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tell us more about what you're looking for..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-full btn-lg">Send Message</button>
+        </form>
+        <div class="contact-form-footer" style="margin-top:16px;">
+          <div class="form-assurance"><i class="bi bi-check-circle-fill"></i> We respond within 24 hours</div>
+          <div class="form-assurance"><i class="bi bi-check-circle-fill"></i> Your information is confidential</div>
+          <div class="form-assurance"><i class="bi bi-check-circle-fill"></i> No obligation</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="section section-alt" style="margin-top:0;">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto;">
+      <span class="section-label">About Haven</span>
+      <h2 class="section-heading">Nigeria's Most Trusted Property Platform</h2>
+      <p class="section-sub" style="margin:16px auto 0;">Founded in 2020, Haven was built with a simple mission: to make finding your perfect home in Nigeria easier, faster and more trustworthy. We verify every listing, vet every agent, and provide the tools you need to make confident property decisions.</p>
+    </div>
+    <div class="features-grid" style="margin-top:48px;">
+      <div class="feature-card fade-up" style="text-align:center;">
+        <div class="feature-icon" style="margin:0 auto 20px;">
+          <i class="bi bi-house-check"></i>
+        </div>
+        <h3 class="feature-title">Our Mission</h3>
+        <p class="feature-body">To democratise access to quality property information and connect Nigerians with their perfect homes.</p>
+      </div>
+      <div class="feature-card fade-up" style="text-align:center;">
+        <div class="feature-icon" style="margin:0 auto 20px;">
+          <i class="bi bi-bar-chart"></i>
+        </div>
+        <h3 class="feature-title">Our Impact</h3>
+        <p class="feature-body">Over 50,000 families have found their homes through Haven since our launch in 2020.</p>
+      </div>
+      <div class="feature-card fade-up" style="text-align:center;">
+        <div class="feature-icon" style="margin:0 auto 20px;">
+          <i class="bi bi-award"></i>
+        </div>
+        <h3 class="feature-title">Recognition</h3>
+        <p class="feature-body">Named Nigeria's Best Property Platform 2024 & 2025 by the Nigerian Property Awards.</p>
+      </div>
+      <div class="feature-card fade-up" style="text-align:center;">
+        <div class="feature-icon" style="margin:0 auto 20px;">
+          <i class="bi bi-map"></i>
+        </div>
+        <h3 class="feature-title">Coverage</h3>
+        <p class="feature-body">Active in Lagos and Abuja with plans to expand to Port Harcourt and Ibadan in 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Haven<span class="dot" style="color:#C9A96E;font-size:0.6rem;margin-left:1px;">●</span></div>
+        <p class="footer-tagline">Nigeria's Premier Property Platform</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Properties</div>
+        <ul class="footer-links">
+          <li><a href="listings.html?location=lagos&type=sale">Buy in Lagos</a></li>
+          <li><a href="listings.html?location=abuja&type=sale">Buy in Abuja</a></li>
+          <li><a href="listings.html?location=lagos&type=rent">Rent in Lagos</a></li>
+          <li><a href="listings.html?location=abuja&type=rent">Rent in Abuja</a></li>
+          <li><a href="listings.html?type=luxury">Luxury Homes</a></li>
+          <li><a href="listings.html?type=new">New Developments</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="contact.html#about">About Haven</a></li>
+          <li><a href="agents.html">Our Agents</a></li>
+          <li><a href="contact.html">List Your Property</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i> <span>14 Adeola Odeku Street,<br>Victoria Island, Lagos</span></div>
+        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i> <span>+234 (0) 803 HAVEN 0</span></div>
+        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i> <span>hello@haven.ng</span></div>
+        <div class="footer-contact-item"><i class="bi bi-clock-fill"></i> <span>Mon–Fri 8AM–6PM WAT</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 Haven Properties Ltd. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>

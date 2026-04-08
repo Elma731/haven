@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxury Beachfront Villa — Banana Island, Lagos. 6 bedrooms, 5 bathrooms, 680 sqm. ₦850,000,000. Listed on Haven.">
+  <title>Luxury Beachfront Villa — Banana Island | Haven</title>
+  <link rel="preload" as="image" href="assets/property-3.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">Haven<span class="dot">●</span></a>
+      <ul class="navbar-links">
+        <li><a href="listings.html?type=sale">Buy</a></li>
+        <li><a href="listings.html?type=rent">Rent</a></li>
+        <li><a href="listings.html?type=new">New Developments</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="contact.html#about">About</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-outline">List Property</a>
+        <a href="#" class="navbar-signin">Sign In</a>
+      </div>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="listings.html?type=sale">Buy</a></li>
+    <li><a href="listings.html?type=rent">Rent</a></li>
+    <li><a href="listings.html?type=new">New Developments</a></li>
+    <li><a href="agents.html">Agents</a></li>
+    <li><a href="contact.html#about">About</a></li>
+  </ul>
+  <div class="mobile-nav-actions">
+    <a href="contact.html" class="btn btn-primary btn-full">List Property</a>
+    <a href="#" class="btn btn-outline btn-full">Sign In</a>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb" style="background:#FFFFFF;">
+  <div class="container">
+    <ol class="breadcrumb-list" aria-label="Breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><span class="breadcrumb-sep">›</span></li>
+      <li><a href="listings.html?location=lagos">Lagos</a></li>
+      <li><span class="breadcrumb-sep">›</span></li>
+      <li><a href="listings.html?location=banana-island">Banana Island</a></li>
+      <li><span class="breadcrumb-sep">›</span></li>
+      <li>Luxury Beachfront Villa</li>
+    </ol>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="property-gallery">
+  <div class="container">
+    <div class="gallery-main">
+      <div class="img-container img-container--hero" id="mainGalleryImg">
+        <img src="assets/gallery-3.jpg" alt="Luxury Beachfront Villa — main view" loading="eager" id="mainImg">
+      </div>
+      <button class="gallery-view-all open-lightbox" aria-label="View all photos">
+        <i class="bi bi-images"></i> View All 24 Photos
+      </button>
+    </div>
+    <div class="gallery-thumbs">
+      <div class="gallery-thumb active" role="button" tabindex="0" aria-label="Gallery photo 1">
+        <div class="img-container" style="padding-bottom:75%;"><img src="assets/gallery-3.jpg" alt="Exterior view" loading="lazy"></div>
+      </div>
+      <div class="gallery-thumb" role="button" tabindex="0" aria-label="Gallery photo 2">
+        <div class="img-container" style="padding-bottom:75%;"><img src="assets/gallery-1.jpg" alt="Living room" loading="lazy"></div>
+      </div>
+      <div class="gallery-thumb" role="button" tabindex="0" aria-label="Gallery photo 3">
+        <div class="img-container" style="padding-bottom:75%;"><img src="assets/gallery-2.jpg" alt="Master bedroom" loading="lazy"></div>
+      </div>
+      <div class="gallery-thumb" role="button" tabindex="0" aria-label="Gallery photo 4">
+        <div class="img-container" style="padding-bottom:75%;"><img src="assets/gallery-4.jpg" alt="Pool area" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTY HEADER -->
+<div class="property-header">
+  <div class="container">
+    <div class="property-header-inner">
+      <div>
+        <h1 class="property-main-title">Luxury Beachfront Villa</h1>
+        <div class="property-location-row">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Banana Island, Lagos, Nigeria</span>
+        </div>
+        <div class="property-tags">
+          <span class="tag tag-dark">FOR SALE</span>
+          <span class="tag tag-gold">LUXURY</span>
+          <span class="tag">NEW LISTING</span>
+        </div>
+        <div class="property-features-row">
+          <span class="property-feature">🛏 <strong>6</strong> Beds</span>
+          <span class="property-feature">🚿 <strong>5</strong> Baths</span>
+          <span class="property-feature">📐 <strong>680</strong> sqm</span>
+          <span class="property-feature">🚗 <strong>4</strong> Parking</span>
+        </div>
+      </div>
+      <div class="property-price-box">
+        <div class="property-price">₦850,000,000</div>
+        <div class="property-cta-row">
+          <button class="btn btn-gold" onclick="document.getElementById('tab-agent').scrollIntoView({behavior:'smooth'})">
+            <i class="bi bi-calendar3"></i> Schedule Viewing
+          </button>
+          <button class="btn btn-outline" onclick="document.getElementById('tab-agent').scrollIntoView({behavior:'smooth'})">
+            <i class="bi bi-envelope"></i> Make Enquiry
+          </button>
+        </div>
+        <div class="property-meta-row">
+          <button class="property-meta-btn" aria-label="Share property">
+            <i class="bi bi-share"></i> Share
+          </button>
+          <button class="property-meta-btn card-wishlist" data-id="p3" aria-label="Save property">
+            <i class="bi bi-heart"></i> Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROPERTY CONTENT -->
+<div class="property-content">
+  <div class="container">
+    <div class="property-content-inner">
+      <!-- Main Content -->
+      <div>
+        <!-- Tabs -->
+        <div class="property-tabs" role="tablist">
+          <div class="property-tab-list">
+            <button class="property-tab-btn active" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+            <button class="property-tab-btn" role="tab" data-tab="details" aria-selected="false">Details</button>
+            <button class="property-tab-btn" role="tab" data-tab="amenities" aria-selected="false">Amenities</button>
+            <button class="property-tab-btn" role="tab" data-tab="location" aria-selected="false">Location</button>
+            <button class="property-tab-btn" role="tab" data-tab="agent" aria-selected="false">Agent</button>
+          </div>
+        </div>
+
+        <!-- Overview -->
+        <div class="property-tab-panel active" id="tab-overview" role="tabpanel">
+          <p class="property-description">This extraordinary beachfront villa represents the pinnacle of luxury living in Nigeria. Situated on the exclusive Banana Island, it offers unobstructed views of the Atlantic Ocean from every floor. Designed by award-winning architect Bayo Akinyemi, the property seamlessly blends contemporary Nigerian aesthetics with world-class finishes.</p>
+          <p class="property-description">Spanning three floors over 680 square metres of living space, this magnificent residence features six en-suite bedrooms, a grand open-plan living area with double-height ceilings, and a chef's kitchen equipped with premium German appliances. The master suite occupies the entire top floor, with a private terrace overlooking the ocean.</p>
+          <p class="property-description">The landscaped grounds include a 20-metre infinity pool, a fully equipped private gym, home cinema, and direct gated beach access. The property is supported by 100% solar power backup, fibre internet throughout, and a comprehensive Lutron smart home system. Banana Island's 24/7 security and controlled access ensure complete peace of mind.</p>
+          <div class="property-highlights">
+            <h4>Key Highlights</h4>
+            <ul class="highlights-list">
+              <li>Direct beach access through private gated walkway</li>
+              <li>20-metre infinity swimming pool with ocean views</li>
+              <li>Lutron smart home automation throughout</li>
+              <li>24/7 security with CCTV and BQ accommodation</li>
+              <li>100% solar power backup with inverter system</li>
+              <li>Fully fitted German kitchen with premium appliances</li>
+              <li>Home cinema room with 4K projection</li>
+              <li>4-car garage with EV charging points</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="property-tab-panel" id="tab-details" role="tabpanel">
+          <div class="details-grid">
+            <div class="detail-item">
+              <div class="detail-label">Property Type</div>
+              <div class="detail-value">Villa</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Bedrooms</div>
+              <div class="detail-value">6</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Bathrooms</div>
+              <div class="detail-value">5</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Living Area</div>
+              <div class="detail-value">680 sqm</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Plot Size</div>
+              <div class="detail-value">1,200 sqm</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Year Built</div>
+              <div class="detail-value">2022</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Parking Spaces</div>
+              <div class="detail-value">4</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Furnishing</div>
+              <div class="detail-value">Fully Furnished</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Floors</div>
+              <div class="detail-value">3</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Service Charge</div>
+              <div class="detail-value">₦2,000,000/year</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amenities -->
+        <div class="property-tab-panel" id="tab-amenities" role="tabpanel">
+          <div class="amenities-grid">
+            <div class="amenity-item"><span>🏊</span> Swimming Pool</div>
+            <div class="amenity-item"><span>🏋</span> Private Gym</div>
+            <div class="amenity-item"><span>🎬</span> Home Cinema</div>
+            <div class="amenity-item"><span>🌿</span> Landscaped Garden</div>
+            <div class="amenity-item"><span>🔐</span> Smart Security</div>
+            <div class="amenity-item"><span>⚡</span> Solar Power</div>
+            <div class="amenity-item"><span>🌊</span> Ocean View</div>
+            <div class="amenity-item"><span>🍽</span> Chef's Kitchen</div>
+            <div class="amenity-item"><span>🧺</span> Laundry Room</div>
+            <div class="amenity-item"><span>🅿</span> 4-Car Garage</div>
+            <div class="amenity-item"><span>🛁</span> Jacuzzi</div>
+            <div class="amenity-item"><span>📡</span> Fibre Internet</div>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="property-tab-panel" id="tab-location" role="tabpanel">
+          <h4 style="font-family:'DM Serif Display',serif;margin-bottom:16px;">Banana Island, Lagos</h4>
+          <div class="property-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4835!2d3.4219!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf52b5b7e9b5b%3A0x3e6e3a5b8a8b7e9b!2sBanana+Island%2C+Lagos!5e0!3m2!1sen!2sng!4v1700000000000"
+              width="100%"
+              height="400"
+              style="border:0;display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              title="Banana Island Lagos map"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="nearby-list" style="margin-top:24px;">
+            <div class="nearby-item"><span><!--🏫--><i class="bi bi-book"></i></span> International School: 0.8km</div>
+            <div class="nearby-item"><span><!--🏥--><i class="bi bi-hospital-fill"></i></span> Eko Hospital: 2.1km</div>
+            <div class="nearby-item"><span><!--🛒--><i class="bi bi-cart3"></i></span> Shoprite: 3.5km</div>
+            <div class="nearby-item"><span><!--✈--><i class="bi bi-airplane"></i></span> Murtala Airport: 28km</div>
+            <div class="nearby-item"><span><!--⛽--><i class="bi bi-fuel-pump-fill"></i></span> Petrol Station: 0.5km</div>
+            <div class="nearby-item"><span><!--🏦--><i class="bi bi-bank2"></i></span> GTBank Branch: 1.2km</div>
+          </div>
+        </div>
+
+        <!-- Agent Tab -->
+        <div class="property-tab-panel" id="tab-agent" role="tabpanel">
+          <div class="agent-sidebar-card" style="max-width:480px;">
+            <div class="sidebar-agent-info">
+              <div class="sidebar-agent-photo">
+                <img src="assets/agent-3.jpg" alt="Ngozi Williams">
+              </div>
+              <div>
+                <div class="sidebar-agent-name">Ngozi Williams</div>
+                <div class="sidebar-agent-title">Residential Sales Expert</div>
+                <div class="sidebar-agent-stats"><span class="stars">★★★★★</span> 4.9 · 62 listings</div>
+              </div>
+            </div>
+            <form class="contact-form" data-validate>
+              <div class="form-group">
+                <label for="name-tab">Full Name *</label>
+                <input type="text" id="name-tab" name="name" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email-tab">Email Address *</label>
+                <input type="email" id="email-tab" name="email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone-tab">Phone Number</label>
+                <input type="tel" id="phone-tab" name="phone" placeholder="+234 800 000 0000">
+              </div>
+              <div class="form-group">
+                <label for="msg-tab">Message</label>
+                <textarea id="msg-tab" name="message" rows="3">I'm interested in this property and would like to arrange a viewing.</textarea>
+              </div>
+              <button type="submit" class="btn btn-gold btn-full">Send Message</button>
+            </form>
+            <div class="form-success" style="display:none;text-align:center;padding:24px 0;">
+              <i class="bi bi-check-circle" style="font-size:2rem;color:#16A34A;display:block;margin-bottom:10px;"></i>
+              <p style="font-family:'DM Sans',sans-serif;font-weight:500;margin-bottom:4px;">Message Sent!</p>
+              <p style="font-family:'DM Sans',sans-serif;font-weight:300;color:#6B6B6B;font-size:0.875rem;">We'll be in touch within 24 hours.</p>
+            </div>
+            <div class="sidebar-direct-contact" style="margin-top:16px;padding-top:16px;border-top:1px solid #E8E8E4;">
+              <div class="sidebar-contact-link"><i class="bi bi-telephone-fill"></i> +234 803 555 0103</div>
+              <div class="sidebar-contact-link"><i class="bi bi-envelope-fill"></i> ngozi@haven.ng</div>
+              <a href="https://wa.me/2348035550103" class="btn btn-whatsapp btn-full btn-sm" style="margin-top:8px;" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /main content -->
+
+      <!-- AGENT SIDEBAR (desktop sticky) -->
+      <div class="agent-sidebar">
+        <div class="agent-sidebar-card">
+          <div class="sidebar-agent-info">
+            <div class="sidebar-agent-photo">
+              <img src="assets/agent-3.jpg" alt="Ngozi Williams">
+            </div>
+            <div>
+              <div class="sidebar-agent-name">Ngozi Williams</div>
+              <div class="sidebar-agent-title">Residential Sales Expert</div>
+              <div class="sidebar-agent-stats"><span class="stars">★★★★★</span> 4.9 · 62 listings</div>
+            </div>
+          </div>
+          <form class="contact-form" data-validate>
+            <div class="form-group">
+              <label for="name-sidebar">Full Name *</label>
+              <input type="text" id="name-sidebar" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email-sidebar">Email Address *</label>
+              <input type="email" id="email-sidebar" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone-sidebar">Phone Number</label>
+              <input type="tel" id="phone-sidebar" name="phone" placeholder="+234 800 000 0000">
+            </div>
+            <div class="form-group">
+              <label for="msg-sidebar">Message</label>
+              <textarea id="msg-sidebar" name="message" rows="3">I'm interested in this property...</textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-full">Send Message</button>
+          </form>
+          <div class="form-success" style="display:none;text-align:center;padding:24px 0;">
+            <i class="bi bi-check-circle" style="font-size:2rem;color:#16A34A;display:block;margin-bottom:10px;"></i>
+            <p style="font-family:'DM Sans',sans-serif;font-weight:500;margin-bottom:4px;">Message Sent!</p>
+            <p style="font-family:'DM Sans',sans-serif;font-weight:300;color:#6B6B6B;font-size:0.875rem;">We'll be in touch within 24 hours.</p>
+          </div>
+          <div class="sidebar-direct-contact" style="margin-top:16px;padding-top:16px;border-top:1px solid #E8E8E4;">
+            <div class="sidebar-contact-link"><i class="bi bi-telephone-fill"></i> +234 803 555 0103</div>
+            <div class="sidebar-contact-link"><i class="bi bi-envelope-fill"></i> ngozi@haven.ng</div>
+            <a href="https://wa.me/2348035550103" class="btn btn-whatsapp btn-full btn-sm" style="margin-top:8px;" target="_blank" rel="noopener">
+              <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /property-content-inner -->
+  </div>
+</div>
+
+<!-- SIMILAR PROPERTIES -->
+<section class="similar-section">
+  <div class="container">
+    <span class="section-label">Similar Properties</span>
+    <h2 class="section-heading" style="margin-bottom:32px;">You Might Also Like</h2>
+    <div class="properties-grid">
+      <a href="property.html" class="property-card fade-up">
+        <div class="card-img-wrap">
+          <div class="img-container img-container--card"><img src="assets/property-9.jpg" alt="6-Bed Mansion" loading="lazy"></div>
+          <div class="card-badges"><span class="card-badge-sale">FOR SALE</span><span class="card-badge-luxury">LUXURY</span></div>
+          <button class="card-wishlist" data-id="p9" aria-label="Save"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">Mansion</div>
+          <h3 class="card-name">6-Bed Mansion</h3>
+          <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Banana Island, Lagos</div>
+          <div class="card-price">₦1,200,000,000</div>
+          <div class="card-features">
+            <span class="card-feature">🛏 6 Beds</span>
+            <span class="card-feature">🚿 6 Baths</span>
+            <span class="card-feature">📐 800 sqm</span>
+          </div>
+        </div>
+      </a>
+      <a href="property.html" class="property-card fade-up">
+        <div class="card-img-wrap">
+          <div class="img-container img-container--card"><img src="assets/property-5.jpg" alt="Sky Penthouse" loading="lazy"></div>
+          <div class="card-badges"><span class="card-badge-sale">FOR SALE</span><span class="card-badge-luxury">LUXURY</span></div>
+          <button class="card-wishlist" data-id="p5" aria-label="Save"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">Penthouse</div>
+          <h3 class="card-name">Sky Penthouse</h3>
+          <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Ikoyi, Lagos</div>
+          <div class="card-price">₦650,000,000</div>
+          <div class="card-features">
+            <span class="card-feature">🛏 4 Beds</span>
+            <span class="card-feature">🚿 4 Baths</span>
+            <span class="card-feature">📐 520 sqm</span>
+          </div>
+        </div>
+      </a>
+      <a href="property.html" class="property-card fade-up">
+        <div class="card-img-wrap">
+          <div class="img-container img-container--card"><img src="assets/property-11.jpg" alt="Waterfront Duplex" loading="lazy"></div>
+          <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+          <button class="card-wishlist" data-id="p11" aria-label="Save"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">Duplex</div>
+          <h3 class="card-name">Waterfront Duplex</h3>
+          <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Oniru, Lagos</div>
+          <div class="card-price">₦420,000,000</div>
+          <div class="card-features">
+            <span class="card-feature">🛏 4 Beds</span>
+            <span class="card-feature">🚿 4 Baths</span>
+            <span class="card-feature">📐 380 sqm</span>
+          </div>
+        </div>
+      </a>
+      <a href="property.html" class="property-card fade-up">
+        <div class="card-img-wrap">
+          <div class="img-container img-container--card"><img src="assets/property-2.jpg" alt="Executive 5-Bed Duplex" loading="lazy"></div>
+          <div class="card-badges"><span class="card-badge-sale">FOR SALE</span><span class="card-badge-new">NEW</span></div>
+          <button class="card-wishlist" data-id="p2" aria-label="Save"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">Duplex</div>
+          <h3 class="card-name">Executive 5-Bed Duplex</h3>
+          <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Maitama, Abuja</div>
+          <div class="card-price">₦380,000,000</div>
+          <div class="card-features">
+            <span class="card-feature">🛏 5 Beds</span>
+            <span class="card-feature">🚿 4 Baths</span>
+            <span class="card-feature">📐 450 sqm</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Haven<span class="dot" style="color:#C9A96E;font-size:0.6rem;margin-left:1px;">●</span></div>
+        <p class="footer-tagline">Nigeria's Premier Property Platform</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Properties</div>
+        <ul class="footer-links">
+          <li><a href="listings.html?location=lagos&type=sale">Buy in Lagos</a></li>
+          <li><a href="listings.html?location=abuja&type=sale">Buy in Abuja</a></li>
+          <li><a href="listings.html?location=lagos&type=rent">Rent in Lagos</a></li>
+          <li><a href="listings.html?location=abuja&type=rent">Rent in Abuja</a></li>
+          <li><a href="listings.html?type=luxury">Luxury Homes</a></li>
+          <li><a href="listings.html?type=new">New Developments</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="contact.html#about">About Haven</a></li>
+          <li><a href="agents.html">Our Agents</a></li>
+          <li><a href="contact.html">List Your Property</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i> <span>14 Adeola Odeku Street,<br>Victoria Island, Lagos</span></div>
+        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i> <span>+234 (0) 803 HAVEN 0</span></div>
+        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i> <span>hello@haven.ng</span></div>
+        <div class="footer-contact-item"><i class="bi bi-clock-fill"></i> <span>Mon–Fri 8AM–6PM WAT</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 Haven Properties Ltd. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Photo gallery">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" aria-label="Close gallery"><i class="bi bi-x-lg"></i></button>
+    <button class="lightbox-prev" aria-label="Previous photo"><i class="bi bi-chevron-left"></i></button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="Gallery photo">
+    </div>
+    <button class="lightbox-next" aria-label="Next photo"><i class="bi bi-chevron-right"></i></button>
+    <div class="lightbox-counter">1 / 6</div>
+  </div>
+</div>
+
+<button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>

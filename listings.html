@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all properties for sale and rent in Lagos and Abuja on Haven.">
+  <title>All Properties — Haven</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">Haven<span class="dot">●</span></a>
+      <ul class="navbar-links">
+        <li><a href="listings.html?type=sale">Buy</a></li>
+        <li><a href="listings.html?type=rent">Rent</a></li>
+        <li><a href="listings.html?type=new">New Developments</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="contact.html#about">About</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-outline">List Property</a>
+        <a href="#" class="navbar-signin">Sign In</a>
+      </div>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="listings.html?type=sale">Buy</a></li>
+    <li><a href="listings.html?type=rent">Rent</a></li>
+    <li><a href="listings.html?type=new">New Developments</a></li>
+    <li><a href="agents.html">Agents</a></li>
+    <li><a href="contact.html#about">About</a></li>
+  </ul>
+  <div class="mobile-nav-actions">
+    <a href="contact.html" class="btn btn-primary btn-full">List Property</a>
+    <a href="#" class="btn btn-outline btn-full">Sign In</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="listings-hero">
+  <div class="container">
+    <h2 style="font-family:'DM Serif Display',serif;text-align:center;margin-bottom:24px;">Find Your Perfect Property</h2>
+    <div class="search-bar" style="max-width:800px;" role="search">
+      <div class="search-field">
+        <label class="search-field-label"><i class="bi bi-geo-alt"></i> Location</label>
+        <input type="text" name="location" placeholder="Lagos, Abuja..." aria-label="Search location">
+      </div>
+      <div class="search-field">
+        <label class="search-field-label">Type</label>
+        <select name="type" aria-label="Property type">
+          <option value="">Any Type</option>
+          <option>House</option>
+          <option>Apartment</option>
+          <option>Duplex</option>
+          <option>Villa</option>
+          <option>Land</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label class="search-field-label">Beds</label>
+        <select name="beds" aria-label="Bedrooms">
+          <option value="">Any Beds</option>
+          <option>Studio</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+        </select>
+      </div>
+      <button class="search-btn" type="button">Search</button>
+    </div>
+  </div>
+</div>
+
+<!-- LISTINGS LAYOUT -->
+<div class="container">
+  <div class="listings-layout">
+
+    <!-- FILTER SIDEBAR -->
+    <aside class="filter-sidebar" role="complementary" aria-label="Property filters">
+      <div class="filter-header">
+        <span class="filter-title">Filters</span>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="filter-clear">Clear All</button>
+          <button class="filter-close-btn" aria-label="Close filters" style="display:none;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--text-secondary);line-height:1;padding:4px;">✕</button>
+        </div>
+      </div>
+
+      <!-- Listing Type -->
+      <div class="filter-section">
+        <div class="filter-section-title">Listing Type</div>
+        <div class="filter-radio">
+          <label><input type="radio" name="listingType" value="sale" checked> For Sale</label>
+          <label><input type="radio" name="listingType" value="rent"> For Rent</label>
+          <label><input type="radio" name="listingType" value="both"> Both</label>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="filter-section">
+        <div class="filter-section-title">Location</div>
+        <div class="filter-checkbox">
+          <label><input type="checkbox" value="victoria-island"> Victoria Island, Lagos</label>
+          <label><input type="checkbox" value="ikoyi"> Ikoyi, Lagos</label>
+          <label><input type="checkbox" value="lekki"> Lekki, Lagos</label>
+          <label><input type="checkbox" value="banana-island"> Banana Island, Lagos</label>
+          <label><input type="checkbox" value="maitama"> Maitama, Abuja</label>
+          <label><input type="checkbox" value="wuse-ii"> Wuse II, Abuja</label>
+          <label><input type="checkbox" value="asokoro"> Asokoro, Abuja</label>
+          <label><input type="checkbox" value="garki"> Garki, Abuja</label>
+        </div>
+      </div>
+
+      <!-- Property Type -->
+      <div class="filter-section">
+        <div class="filter-section-title">Property Type</div>
+        <div class="filter-checkbox">
+          <label><input type="checkbox" value="house"> House</label>
+          <label><input type="checkbox" value="apartment"> Apartment</label>
+          <label><input type="checkbox" value="duplex"> Duplex</label>
+          <label><input type="checkbox" value="villa"> Villa</label>
+          <label><input type="checkbox" value="penthouse"> Penthouse</label>
+          <label><input type="checkbox" value="land"> Land</label>
+          <label><input type="checkbox" value="commercial"> Commercial</label>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-section">
+        <div class="filter-section-title">Price Range</div>
+        <div class="range-slider-wrap">
+          <div class="range-values">
+            <span>₦0</span>
+            <span id="priceDisplay">Up to ₦1B+</span>
+          </div>
+          <input type="range" id="priceRange" class="range-slider" min="0" max="1000000000" value="1000000000" step="5000000" aria-label="Maximum price">
+        </div>
+      </div>
+
+      <!-- Bedrooms -->
+      <div class="filter-section">
+        <div class="filter-section-title">Bedrooms</div>
+        <div class="filter-pills filter-pill-group" data-filter="beds">
+          <button class="filter-pill active" data-value="any">Any</button>
+          <button class="filter-pill" data-value="1">1</button>
+          <button class="filter-pill" data-value="2">2</button>
+          <button class="filter-pill" data-value="3">3</button>
+          <button class="filter-pill" data-value="4">4</button>
+          <button class="filter-pill" data-value="5+">5+</button>
+        </div>
+      </div>
+
+      <!-- Bathrooms -->
+      <div class="filter-section">
+        <div class="filter-section-title">Bathrooms</div>
+        <div class="filter-pills filter-pill-group" data-filter="baths">
+          <button class="filter-pill active" data-value="any">Any</button>
+          <button class="filter-pill" data-value="1">1</button>
+          <button class="filter-pill" data-value="2">2</button>
+          <button class="filter-pill" data-value="3">3</button>
+          <button class="filter-pill" data-value="4+">4+</button>
+        </div>
+      </div>
+
+      <!-- Size -->
+      <div class="filter-section">
+        <div class="filter-section-title">Size (sqm)</div>
+        <div class="range-slider-wrap">
+          <div class="range-values">
+            <span>0 sqm</span>
+            <span id="sizeDisplay">Up to 1000 sqm</span>
+          </div>
+          <input type="range" id="sizeRange" class="range-slider" min="0" max="1000" value="1000" step="10" aria-label="Maximum size">
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div class="filter-section">
+        <div class="filter-section-title">Amenities</div>
+        <div class="filter-checkbox">
+          <label><input type="checkbox" value="pool"> Swimming Pool</label>
+          <label><input type="checkbox" value="gym"> Gym</label>
+          <label><input type="checkbox" value="security"> Security/BQ</label>
+          <label><input type="checkbox" value="generator"> Generator</label>
+          <label><input type="checkbox" value="parking"> Parking</label>
+          <label><input type="checkbox" value="elevator"> Elevator</label>
+          <label><input type="checkbox" value="waterfront"> Waterfront</label>
+          <label><input type="checkbox" value="serviced"> Serviced</label>
+        </div>
+      </div>
+
+      <button class="btn btn-gold btn-full apply-filters-btn" style="margin-top:8px;">Apply Filters</button>
+    </aside>
+
+    <!-- LISTINGS AREA -->
+    <div>
+      <!-- Top bar -->
+      <div class="listings-topbar">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <button class="mobile-filter-toggle" aria-label="Open filters">
+            <i class="bi bi-sliders"></i> Filters
+            <span class="filter-count-badge hidden">0</span>
+          </button>
+          <p class="listings-count">Showing <strong>12</strong> properties</p>
+        </div>
+        <div class="listings-controls">
+          <select class="sort-select" aria-label="Sort properties">
+            <option value="featured">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+            <option value="popular">Most Popular</option>
+          </select>
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button class="view-btn active" data-view="grid" aria-label="Grid view"><i class="bi bi-grid"></i></button>
+            <button class="view-btn" data-view="list" aria-label="List view"><i class="bi bi-list-ul"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROPERTY GRID -->
+      <div class="listings-grid properties-grid">
+
+        <!-- P1 -->
+        <a href="property.html" class="property-card fade-up" data-beds="3" data-price="120000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-1.jpg" alt="Modern 3-Bed Apartment" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p1" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Apartment</div>
+            <h3 class="card-name">Modern 3-Bed Apartment</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Victoria Island, Lagos</div>
+            <div class="card-price">₦120,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 3 Beds</span>
+              <span class="card-feature">🚿 2 Baths</span>
+              <span class="card-feature">📐 180 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-1.jpg" alt="Amaka Osei"></div>
+              <span class="card-agent-name">Listed by Amaka Osei</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P2 -->
+        <a href="property.html" class="property-card fade-up" data-beds="5" data-price="380000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-2.jpg" alt="Executive 5-Bed Duplex" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span><span class="card-badge-new">NEW</span></div>
+            <button class="card-wishlist" data-id="p2" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Duplex</div>
+            <h3 class="card-name">Executive 5-Bed Duplex</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Maitama, Abuja</div>
+            <div class="card-price">₦380,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 5 Beds</span>
+              <span class="card-feature">🚿 4 Baths</span>
+              <span class="card-feature">📐 450 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-2.jpg" alt="Tunde Adeyemi"></div>
+              <span class="card-agent-name">Listed by Tunde Adeyemi</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P3 -->
+        <a href="property.html" class="property-card fade-up" data-beds="6" data-price="850000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-3.jpg" alt="Luxury Beachfront Villa" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span><span class="card-badge-luxury">LUXURY</span></div>
+            <button class="card-wishlist" data-id="p3" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Villa</div>
+            <h3 class="card-name">Luxury Beachfront Villa</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Banana Island, Lagos</div>
+            <div class="card-price">₦850,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 6 Beds</span>
+              <span class="card-feature">🚿 5 Baths</span>
+              <span class="card-feature">📐 680 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-3.jpg" alt="Ngozi Williams"></div>
+              <span class="card-agent-name">Listed by Ngozi Williams</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P4 -->
+        <a href="property.html" class="property-card fade-up" data-beds="2" data-price="75000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-4.jpg" alt="Smart 2-Bed Apartment" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p4" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Apartment</div>
+            <h3 class="card-name">Smart 2-Bed Apartment</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Wuse II, Abuja</div>
+            <div class="card-price">₦75,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 2 Beds</span>
+              <span class="card-feature">🚿 2 Baths</span>
+              <span class="card-feature">📐 120 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-4.jpg" alt="Emeka Nwosu"></div>
+              <span class="card-agent-name">Listed by Emeka Nwosu</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P5 -->
+        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="650000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-5.jpg" alt="Sky Penthouse Ikoyi" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span><span class="card-badge-luxury">LUXURY</span></div>
+            <button class="card-wishlist" data-id="p5" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Penthouse</div>
+            <h3 class="card-name">Sky Penthouse</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Ikoyi, Lagos</div>
+            <div class="card-price">₦650,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 4 Beds</span>
+              <span class="card-feature">🚿 4 Baths</span>
+              <span class="card-feature">📐 520 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-5.jpg" alt="Fatima Hassan"></div>
+              <span class="card-agent-name">Listed by Fatima Hassan</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P6 -->
+        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="195000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-6.jpg" alt="Contemporary Terrace House" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p6" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Terrace</div>
+            <h3 class="card-name">Contemporary Terrace House</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Asokoro, Abuja</div>
+            <div class="card-price">₦195,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 4 Beds</span>
+              <span class="card-feature">🚿 3 Baths</span>
+              <span class="card-feature">📐 280 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-6.jpg" alt="Chioma Eze"></div>
+              <span class="card-agent-name">Listed by Chioma Eze</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P7 -->
+        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="220000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-7.jpg" alt="4-Bed Semi-Detached House Lekki Phase 1" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p7" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">House</div>
+            <h3 class="card-name">4-Bed Semi-Detached House</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Lekki Phase 1, Lagos</div>
+            <div class="card-price">₦220,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 4 Beds</span>
+              <span class="card-feature">🚿 3 Baths</span>
+              <span class="card-feature">📐 340 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-7.jpg" alt="Chidi Okafor"></div>
+              <span class="card-agent-name">Listed by Chidi Okafor</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P8 -->
+        <a href="property.html" class="property-card fade-up" data-beds="2" data-price="65000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-8.jpg" alt="2-Bed Garden Apartment Jabi" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p8" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Apartment</div>
+            <h3 class="card-name">2-Bed Garden Apartment</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Jabi, Abuja</div>
+            <div class="card-price">₦65,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 2 Beds</span>
+              <span class="card-feature">🚿 2 Baths</span>
+              <span class="card-feature">📐 110 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-8.jpg" alt="Blessing Adamu"></div>
+              <span class="card-agent-name">Listed by Blessing Adamu</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P9 -->
+        <a href="property.html" class="property-card fade-up" data-beds="6" data-price="1200000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-9.jpg" alt="6-Bed Mansion Banana Island" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span><span class="card-badge-luxury">LUXURY</span></div>
+            <button class="card-wishlist" data-id="p9" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Mansion</div>
+            <h3 class="card-name">6-Bed Mansion</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Banana Island, Lagos</div>
+            <div class="card-price">₦1,200,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 6 Beds</span>
+              <span class="card-feature">🚿 6 Baths</span>
+              <span class="card-feature">📐 800 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-1.jpg" alt="Amaka Osei"></div>
+              <span class="card-agent-name">Listed by Amaka Osei</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P10 -->
+        <a href="property.html" class="property-card fade-up" data-beds="3" data-price="280000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-10.jpg" alt="3-Bed Penthouse Central Abuja" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p10" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Penthouse</div>
+            <h3 class="card-name">3-Bed Penthouse</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Central Abuja</div>
+            <div class="card-price">₦280,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 3 Beds</span>
+              <span class="card-feature">🚿 3 Baths</span>
+              <span class="card-feature">📐 250 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-2.jpg" alt="Tunde Adeyemi"></div>
+              <span class="card-agent-name">Listed by Tunde Adeyemi</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P11 -->
+        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="420000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-11.jpg" alt="Waterfront Duplex Oniru" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p11" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Duplex</div>
+            <h3 class="card-name">Waterfront Duplex</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Oniru, Lagos</div>
+            <div class="card-price">₦420,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 4 Beds</span>
+              <span class="card-feature">🚿 4 Baths</span>
+              <span class="card-feature">📐 380 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-3.jpg" alt="Ngozi Williams"></div>
+              <span class="card-agent-name">Listed by Ngozi Williams</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- P12 -->
+        <a href="property.html" class="property-card fade-up" data-beds="1" data-price="35000000" data-listing-type="sale">
+          <div class="card-img-wrap">
+            <div class="img-container img-container--card">
+              <img src="assets/property-12.jpg" alt="1-Bed Studio Apartment Wuse" loading="lazy">
+            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
+            <button class="card-wishlist" data-id="p12" aria-label="Save"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-type">Studio</div>
+            <h3 class="card-name">1-Bed Studio Apartment</h3>
+            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Wuse, Abuja</div>
+            <div class="card-price">₦35,000,000</div>
+            <div class="card-features">
+              <span class="card-feature">🛏 1 Bed</span>
+              <span class="card-feature">🚿 1 Bath</span>
+              <span class="card-feature">📐 55 sqm</span>
+            </div>
+            <div class="card-agent">
+              <div class="card-agent-photo"><img src="assets/agent-4.jpg" alt="Emeka Nwosu"></div>
+              <span class="card-agent-name">Listed by Emeka Nwosu</span>
+            </div>
+          </div>
+        </a>
+
+      </div><!-- /listings-grid -->
+
+      <!-- PAGINATION -->
+      <div class="pagination" role="navigation" aria-label="Pagination">
+        <button class="page-btn" disabled aria-label="Previous page"><i class="bi bi-chevron-left"></i></button>
+        <button class="page-btn active" aria-current="page">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn" aria-label="Next page"><i class="bi bi-chevron-right"></i></button>
+      </div>
+    </div><!-- /listings area -->
+
+  </div><!-- /listings-layout -->
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Haven<span class="dot" style="color:#C9A96E;font-size:0.6rem;margin-left:1px;">●</span></div>
+        <p class="footer-tagline">Nigeria's Premier Property Platform</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Properties</div>
+        <ul class="footer-links">
+          <li><a href="listings.html?location=lagos&type=sale">Buy in Lagos</a></li>
+          <li><a href="listings.html?location=abuja&type=sale">Buy in Abuja</a></li>
+          <li><a href="listings.html?location=lagos&type=rent">Rent in Lagos</a></li>
+          <li><a href="listings.html?location=abuja&type=rent">Rent in Abuja</a></li>
+          <li><a href="listings.html?type=luxury">Luxury Homes</a></li>
+          <li><a href="listings.html?type=new">New Developments</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="contact.html#about">About Haven</a></li>
+          <li><a href="agents.html">Our Agents</a></li>
+          <li><a href="contact.html">List Your Property</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i> <span>14 Adeola Odeku Street,<br>Victoria Island, Lagos</span></div>
+        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i> <span>+234 (0) 803 HAVEN 0</span></div>
+        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i> <span>hello@haven.ng</span></div>
+        <div class="footer-contact-item"><i class="bi bi-clock-fill"></i> <span>Mon–Fri 8AM–6PM WAT</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 Haven Properties Ltd. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>
