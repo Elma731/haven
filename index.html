@@ -9,9 +9,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-sidebar">
 
-<!-- ====== NAVBAR ====== -->
+<!-- ====== SIDEBAR NAV (desktop ≥1024px) ====== -->
+<aside class="sidebar" id="sidebar">
+  <a href="index.html" class="sidebar-logo">Haven<span class="dot">●</span></a>
+  <nav class="sidebar-nav" aria-label="Primary navigation">
+    <ul>
+      <li><a href="listings.html?type=sale" class="active">Buy</a></li>
+      <li><a href="listings.html?type=rent">Rent</a></li>
+      <li><a href="listings.html?type=new">New Developments</a></li>
+      <li><a href="agents.html">Agents</a></li>
+      <li><a href="contact.html#about">About</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <a href="contact.html" class="sidebar-cta">List Your Property</a>
+    <a href="#" class="sidebar-signin">Sign In</a>
+  </div>
+</aside>
+
+<!-- ====== TOP NAVBAR (mobile &lt;1024px) ====== -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="navbar-inner">
@@ -22,6 +41,7 @@
         <li><a href="listings.html?type=new">New Developments</a></li>
         <li><a href="agents.html">Agents</a></li>
         <li><a href="contact.html#about">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="navbar-actions">
         <a href="contact.html" class="btn btn-outline">List Property</a>
@@ -33,8 +53,6 @@
     </div>
   </div>
 </nav>
-
-<!-- Mobile Nav -->
 <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
   <ul class="mobile-nav-links">
     <li><a href="listings.html?type=sale">Buy</a></li>
@@ -42,6 +60,7 @@
     <li><a href="listings.html?type=new">New Developments</a></li>
     <li><a href="agents.html">Agents</a></li>
     <li><a href="contact.html#about">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
   </ul>
   <div class="mobile-nav-actions">
     <a href="contact.html" class="btn btn-primary btn-full">List Property</a>
@@ -49,132 +68,90 @@
   </div>
 </div>
 
-<!-- ====== HERO ====== -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <!-- Left -->
-      <div class="hero-left fade-up">
-        <span class="hero-label">Nigeria's Premier Property Platform</span>
-        <h1 class="hero-title">Find Your<br>Perfect Home<br>in Nigeria.</h1>
-        <p class="hero-sub">Discover thousands of properties for sale and rent across Lagos and Abuja. Your next home is closer than you think.</p>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-number"><span data-count="12000" data-suffix="+">0</span></div>
-            <div class="hero-stat-label">Properties</div>
+<!-- ====== MAIN CONTENT ====== -->
+<div class="main-content">
+
+  <!-- ====== SPLIT HERO ====== -->
+  <section class="split-hero">
+    <!-- Left: dark panel -->
+    <div class="split-hero-left">
+      <span class="hero-label">Nigeria's Premier Property Platform</span>
+      <h1 class="hero-title">Find Your<br>Perfect Home<br>in Nigeria.</h1>
+      <p class="hero-sub">Discover thousands of properties for sale and rent across Lagos and Abuja. Your next home is closer than you think.</p>
+      <div class="split-hero-search">
+        <div class="split-hero-search-fields">
+          <div class="search-field">
+            <label class="search-field-label"><i class="bi bi-geo-alt"></i> Location</label>
+            <input type="text" name="location" placeholder="Lagos, Abuja..." aria-label="Search location">
           </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-number"><span data-count="500" data-suffix="+">0</span></div>
-            <div class="hero-stat-label">Agents</div>
+          <div class="search-field">
+            <label class="search-field-label">Property Type</label>
+            <select name="type" aria-label="Property type">
+              <option value="">Any Type</option>
+              <option>House</option>
+              <option>Apartment</option>
+              <option>Duplex</option>
+              <option>Villa</option>
+              <option>Land</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label class="search-field-label">Price Range</label>
+            <select name="price" aria-label="Price range">
+              <option value="">Any Price</option>
+              <option>Under ₦50M</option>
+              <option>₦50M – ₦150M</option>
+              <option>₦150M – ₦500M</option>
+              <option>₦500M+</option>
+            </select>
           </div>
         </div>
+        <button class="search-btn" type="button">Search Properties</button>
       </div>
-      <!-- Right -->
-      <div class="hero-right fade-up" style="--delay:150ms" data-delay="150">
-        <div class="hero-image-wrap">
-          <div class="img-container img-container--hero">
-            <img src="assets/hero-property.jpg" alt="Luxury property in Lagos" loading="eager">
-          </div>
-          <div class="hero-featured-card">
-            <div class="hero-featured-thumb">
-              <img src="assets/property-3.jpg" alt="Banana Island Villa">
-            </div>
-            <div>
-              <div class="hero-featured-label">Featured Property</div>
-              <div class="hero-featured-name">Banana Island Villa</div>
-              <div class="hero-featured-price">₦850,000,000</div>
-            </div>
-          </div>
+    </div>
+    <!-- Right: image -->
+    <div class="split-hero-right">
+      <img src="assets/hero-property.jpg" alt="Luxury property in Lagos" loading="eager">
+      <div class="hero-featured-card">
+        <div class="hero-featured-thumb">
+          <img src="assets/property-3.jpg" alt="Banana Island Villa">
+        </div>
+        <div>
+          <div class="hero-featured-label">Featured Property</div>
+          <div class="hero-featured-name">Banana Island Villa</div>
+          <div class="hero-featured-price">₦850,000,000</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== SEARCH BAR ====== -->
-<section class="search-section">
-  <div class="container">
-    <div class="search-bar" role="search">
-      <div class="search-field">
-        <label class="search-field-label"><i class="bi bi-geo-alt"></i> Location</label>
-        <input type="text" name="location" placeholder="Lagos, Abuja..." aria-label="Search location">
-      </div>
-      <div class="search-field">
-        <label class="search-field-label">Property Type</label>
-        <select name="type" aria-label="Property type">
-          <option value="">Any Type</option>
-          <option>House</option>
-          <option>Apartment</option>
-          <option>Duplex</option>
-          <option>Villa</option>
-          <option>Land</option>
-        </select>
-      </div>
-      <div class="search-field">
-        <label class="search-field-label">Price Range</label>
-        <select name="price" aria-label="Price range">
-          <option value="">Any Price</option>
-          <option>Under ₦50M</option>
-          <option>₦50M – ₦150M</option>
-          <option>₦150M – ₦500M</option>
-          <option>₦500M+</option>
-          <option>Under ₦500k/mo (rent)</option>
-          <option>₦500k – ₦2M/mo</option>
-        </select>
-      </div>
-      <div class="search-field">
-        <label class="search-field-label">Bedrooms</label>
-        <select name="beds" aria-label="Number of bedrooms">
-          <option value="">Any Beds</option>
-          <option>Studio</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5+</option>
-        </select>
-      </div>
-      <button class="search-btn" type="button" aria-label="Search properties">Search Properties</button>
-    </div>
-    <div class="search-quick-filters" role="list">
-      <span class="tag" role="listitem"><!--🏠--><i class="bi bi-house-door-fill"></i> For Sale</span>
-      <span class="tag" role="listitem"><!--🏢--><i class="bi bi-building-fill"></i> For Rent</span>
-      <span class="tag" role="listitem"><!--✨--><i class="bi bi-stars"></i> New Builds</span>
-      <span class="tag" role="listitem">🏝 Luxury</span>
-    </div>
-  </div>
-</section>
-
-<!-- ====== FEATURED LISTINGS ====== -->
-<section class="section" style="background:#FAFAFA;">
-  <div class="container">
-    <div class="featured-header">
-      <div class="featured-top">
+  <!-- ====== FEATURED LISTINGS (horizontal scroll) ====== -->
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <div class="sh-section-header">
         <div>
           <span class="section-label">Featured Properties</span>
           <h2 class="section-heading">Handpicked for You</h2>
           <p class="section-sub">Our team selects the finest properties across Lagos and Abuja</p>
         </div>
-        <div class="tabs" role="tablist">
-          <button class="tab-btn active" role="tab" data-tab="sale" aria-selected="true">For Sale</button>
-          <button class="tab-btn" role="tab" data-tab="rent" aria-selected="false">For Rent</button>
+        <div class="scroll-arrows">
+          <button class="scroll-arrow scroll-arrow--prev" data-target="listings-scroll" aria-label="Scroll left">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+          <button class="scroll-arrow scroll-arrow--next" data-target="listings-scroll" aria-label="Scroll right">
+            <i class="bi bi-arrow-right"></i>
+          </button>
         </div>
       </div>
-    </div>
 
-    <!-- FOR SALE -->
-    <div data-tab-content="sale">
-      <div class="properties-grid">
+      <div class="scroll-row" id="listings-scroll">
         <!-- Card 1 -->
-        <a href="property.html" class="property-card fade-up" data-beds="3" data-price="120000000" data-listing-type="sale">
+        <a href="property.html" class="property-card fade-up" data-beds="3" data-price="120000000">
           <div class="card-img-wrap">
             <div class="img-container img-container--card">
               <img src="assets/property-1.jpg" alt="Modern 3-Bed Apartment Victoria Island" loading="lazy">
             </div>
-            <div class="card-badges">
-              <span class="card-badge-sale">FOR SALE</span>
-            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
             <button class="card-wishlist" data-id="p1" aria-label="Save to wishlist"><i class="bi bi-heart"></i></button>
           </div>
           <div class="card-body">
@@ -193,9 +170,8 @@
             </div>
           </div>
         </a>
-
         <!-- Card 2 -->
-        <a href="property.html" class="property-card fade-up" data-beds="5" data-price="380000000" data-listing-type="sale">
+        <a href="property.html" class="property-card fade-up" data-beds="5" data-price="380000000">
           <div class="card-img-wrap">
             <div class="img-container img-container--card">
               <img src="assets/property-2.jpg" alt="Executive 5-Bed Duplex Maitama" loading="lazy">
@@ -222,9 +198,8 @@
             </div>
           </div>
         </a>
-
         <!-- Card 3 -->
-        <a href="property.html" class="property-card fade-up" data-beds="6" data-price="850000000" data-listing-type="sale">
+        <a href="property.html" class="property-card fade-up" data-beds="6" data-price="850000000">
           <div class="card-img-wrap">
             <div class="img-container img-container--card">
               <img src="assets/property-3.jpg" alt="Luxury Beachfront Villa Banana Island" loading="lazy">
@@ -251,16 +226,13 @@
             </div>
           </div>
         </a>
-
         <!-- Card 4 -->
-        <a href="property.html" class="property-card fade-up" data-beds="2" data-price="75000000" data-listing-type="sale">
+        <a href="property.html" class="property-card fade-up" data-beds="2" data-price="75000000">
           <div class="card-img-wrap">
             <div class="img-container img-container--card">
               <img src="assets/property-4.jpg" alt="Smart 2-Bed Apartment Wuse II" loading="lazy">
             </div>
-            <div class="card-badges">
-              <span class="card-badge-sale">FOR SALE</span>
-            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
             <button class="card-wishlist" data-id="p4" aria-label="Save to wishlist"><i class="bi bi-heart"></i></button>
           </div>
           <div class="card-body">
@@ -279,9 +251,8 @@
             </div>
           </div>
         </a>
-
         <!-- Card 5 -->
-        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="650000000" data-listing-type="sale">
+        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="650000000">
           <div class="card-img-wrap">
             <div class="img-container img-container--card">
               <img src="assets/property-5.jpg" alt="Sky Penthouse Ikoyi" loading="lazy">
@@ -308,16 +279,13 @@
             </div>
           </div>
         </a>
-
         <!-- Card 6 -->
-        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="195000000" data-listing-type="sale">
+        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="195000000">
           <div class="card-img-wrap">
             <div class="img-container img-container--card">
               <img src="assets/property-6.jpg" alt="Contemporary Terrace House Asokoro" loading="lazy">
             </div>
-            <div class="card-badges">
-              <span class="card-badge-sale">FOR SALE</span>
-            </div>
+            <div class="card-badges"><span class="card-badge-sale">FOR SALE</span></div>
             <button class="card-wishlist" data-id="p6" aria-label="Save to wishlist"><i class="bi bi-heart"></i></button>
           </div>
           <div class="card-body">
@@ -336,396 +304,337 @@
             </div>
           </div>
         </a>
-      </div>
+      </div><!-- /scroll-row -->
+
+      <a href="listings.html" class="view-all">View All Properties →</a>
     </div>
+  </section>
 
-    <!-- FOR RENT -->
-    <div data-tab-content="rent" class="hidden">
-      <div class="properties-grid">
-        <a href="property.html" class="property-card fade-up" data-beds="2" data-price="850000" data-listing-type="rent">
-          <div class="card-img-wrap">
-            <div class="img-container img-container--card">
-              <img src="assets/rent-1.jpg" alt="Furnished 2-Bed Flat Oniru" loading="lazy">
-            </div>
-            <div class="card-badges"><span class="card-badge-sale">FOR RENT</span></div>
-            <button class="card-wishlist" data-id="r1" aria-label="Save to wishlist"><i class="bi bi-heart"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-type">Apartment</div>
-            <h3 class="card-name">Furnished 2-Bed Flat</h3>
-            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Oniru, Lagos</div>
-            <div class="card-price">₦850,000/month</div>
-            <div class="card-features">
-              <span class="card-feature">🛏 2 Beds</span>
-              <span class="card-feature">🚿 1 Bath</span>
-              <span class="card-feature">📐 95 sqm</span>
-            </div>
-            <div class="card-agent">
-              <div class="card-agent-photo"><img src="assets/agent-1.jpg" alt="Amaka Osei"></div>
-              <span class="card-agent-name">Listed by Amaka Osei</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="property.html" class="property-card fade-up" data-beds="3" data-price="1200000" data-listing-type="rent">
-          <div class="card-img-wrap">
-            <div class="img-container img-container--card">
-              <img src="assets/rent-2.jpg" alt="3-Bed Serviced Apartment Garki" loading="lazy">
-            </div>
-            <div class="card-badges"><span class="card-badge-sale">FOR RENT</span></div>
-            <button class="card-wishlist" data-id="r2" aria-label="Save to wishlist"><i class="bi bi-heart"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-type">Apartment</div>
-            <h3 class="card-name">3-Bed Serviced Apartment</h3>
-            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Garki, Abuja</div>
-            <div class="card-price">₦1,200,000/month</div>
-            <div class="card-features">
-              <span class="card-feature">🛏 3 Beds</span>
-              <span class="card-feature">🚿 2 Baths</span>
-              <span class="card-feature">📐 160 sqm</span>
-            </div>
-            <div class="card-agent">
-              <div class="card-agent-photo"><img src="assets/agent-2.jpg" alt="Tunde Adeyemi"></div>
-              <span class="card-agent-name">Listed by Tunde Adeyemi</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="property.html" class="property-card fade-up" data-beds="4" data-price="2500000" data-listing-type="rent">
-          <div class="card-img-wrap">
-            <div class="img-container img-container--card">
-              <img src="assets/rent-3.jpg" alt="4-Bed Detached House Lekki Phase 2" loading="lazy">
-            </div>
-            <div class="card-badges"><span class="card-badge-sale">FOR RENT</span></div>
-            <button class="card-wishlist" data-id="r3" aria-label="Save to wishlist"><i class="bi bi-heart"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-type">House</div>
-            <h3 class="card-name">4-Bed Detached House</h3>
-            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Lekki Phase 2, Lagos</div>
-            <div class="card-price">₦2,500,000/month</div>
-            <div class="card-features">
-              <span class="card-feature">🛏 4 Beds</span>
-              <span class="card-feature">🚿 3 Baths</span>
-              <span class="card-feature">📐 320 sqm</span>
-            </div>
-            <div class="card-agent">
-              <div class="card-agent-photo"><img src="assets/agent-3.jpg" alt="Ngozi Williams"></div>
-              <span class="card-agent-name">Listed by Ngozi Williams</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="property.html" class="property-card fade-up" data-beds="0" data-price="450000" data-listing-type="rent">
-          <div class="card-img-wrap">
-            <div class="img-container img-container--card">
-              <img src="assets/rent-4.jpg" alt="Studio Service Apartment CBD Abuja" loading="lazy">
-            </div>
-            <div class="card-badges"><span class="card-badge-sale">FOR RENT</span></div>
-            <button class="card-wishlist" data-id="r4" aria-label="Save to wishlist"><i class="bi bi-heart"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-type">Studio</div>
-            <h3 class="card-name">Studio Service Apartment</h3>
-            <div class="card-location"><i class="bi bi-geo-alt-fill"></i> Central Business District, Abuja</div>
-            <div class="card-price">₦450,000/month</div>
-            <div class="card-features">
-              <span class="card-feature">🛏 Studio</span>
-              <span class="card-feature">🚿 1 Bath</span>
-              <span class="card-feature">📐 45 sqm</span>
-            </div>
-            <div class="card-agent">
-              <div class="card-agent-photo"><img src="assets/agent-4.jpg" alt="Emeka Nwosu"></div>
-              <span class="card-agent-name">Listed by Emeka Nwosu</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <a href="listings.html" class="view-all">View All Properties →</a>
-  </div>
-</section>
-
-<!-- ====== CATEGORIES ====== -->
-<section class="section" style="background:#FFFFFF;">
-  <div class="container">
-    <span class="section-label">Explore by Type</span>
-    <h2 class="section-heading">What Are You Looking For?</h2>
-    <div class="categories-grid" style="margin-top:32px;">
-      <a href="listings.html?type=house" class="category-card fade-up">
-        <div class="img-container" style="padding-bottom:75%;">
+  <!-- ====== CATEGORIES (bento grid) ====== -->
+  <section class="section" style="background:#FFFFFF;">
+    <div class="container">
+      <span class="section-label">Explore by Type</span>
+      <h2 class="section-heading">What Are You Looking For?</h2>
+      <div class="bento-grid">
+        <!-- Houses: tall (spans 2 rows) -->
+        <a href="listings.html?type=house" class="bento-item bento-item--tall fade-up">
           <img src="assets/category-house.jpg" alt="Houses and Villas" loading="lazy">
-        </div>
-        <div class="category-overlay"></div>
-        <div class="category-content">
-          <div class="category-title">Houses &amp; Villas</div>
-          <div class="category-count">2,400+ Properties</div>
-        </div>
-      </a>
-      <a href="listings.html?type=apartment" class="category-card fade-up">
-        <div class="img-container" style="padding-bottom:75%;">
+          <div class="bento-item__overlay"></div>
+          <div class="bento-item__content">
+            <div class="bento-item__title">Houses &amp; Villas</div>
+            <div class="bento-item__count">2,400+ Properties</div>
+          </div>
+        </a>
+        <!-- Apartments: normal -->
+        <a href="listings.html?type=apartment" class="bento-item fade-up">
           <img src="assets/category-apartment.jpg" alt="Apartments" loading="lazy">
-        </div>
-        <div class="category-overlay"></div>
-        <div class="category-content">
-          <div class="category-title">Apartments</div>
-          <div class="category-count">5,800+ Properties</div>
-        </div>
-      </a>
-      <a href="listings.html?type=luxury" class="category-card fade-up">
-        <div class="img-container" style="padding-bottom:75%;">
+          <div class="bento-item__overlay"></div>
+          <div class="bento-item__content">
+            <div class="bento-item__title">Apartments</div>
+            <div class="bento-item__count">5,800+ Properties</div>
+          </div>
+        </a>
+        <!-- Luxury: normal -->
+        <a href="listings.html?type=luxury" class="bento-item fade-up">
           <img src="assets/category-luxury.jpg" alt="Luxury Homes" loading="lazy">
-        </div>
-        <div class="category-overlay"></div>
-        <div class="category-content">
-          <div class="category-title">Luxury Homes</div>
-          <div class="category-count">680+ Properties</div>
-        </div>
-      </a>
-      <a href="listings.html?type=land" class="category-card fade-up">
-        <div class="img-container" style="padding-bottom:75%;">
+          <div class="bento-item__overlay"></div>
+          <div class="bento-item__content">
+            <div class="bento-item__title">Luxury Homes</div>
+            <div class="bento-item__count">680+ Properties</div>
+          </div>
+        </a>
+        <!-- Land: wide (spans 2 cols) -->
+        <a href="listings.html?type=land" class="bento-item bento-item--wide fade-up">
           <img src="assets/category-land.jpg" alt="Land and Commercial" loading="lazy">
-        </div>
-        <div class="category-overlay"></div>
-        <div class="category-content">
-          <div class="category-title">Land &amp; Commercial</div>
-          <div class="category-count">1,200+ Properties</div>
-        </div>
-      </a>
+          <div class="bento-item__overlay"></div>
+          <div class="bento-item__content">
+            <div class="bento-item__title">Land &amp; Commercial</div>
+            <div class="bento-item__count">1,200+ Properties</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== WHY HAVEN ====== -->
-<section class="section" style="background:#FFFFFF;">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px;">
-      <span class="section-label">Why Haven</span>
-      <h2 class="section-heading">The Smarter Way to<br>Find Property in Nigeria</h2>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card fade-up">
-        <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
-        <h3 class="feature-title">Verified Listings</h3>
-        <p class="feature-body">Every property on Haven is verified by our team. No fake listings, ever.</p>
+  <!-- ====== WHY HAVEN (numbered list) ====== -->
+  <section class="section" style="background:var(--section-alt);">
+    <div class="container">
+      <div class="numbered-header">
+        <span class="section-label">Why Haven</span>
+        <h2 class="section-heading">The Smarter Way to<br>Find Property in Nigeria</h2>
       </div>
-      <div class="feature-card fade-up">
-        <div class="feature-icon"><i class="bi bi-people"></i></div>
-        <h3 class="feature-title">Expert Local Agents</h3>
-        <p class="feature-body">500+ certified agents across Lagos and Abuja ready to guide your search.</p>
-      </div>
-      <div class="feature-card fade-up">
-        <div class="feature-icon"><i class="bi bi-camera"></i></div>
-        <h3 class="feature-title">High-Quality Photography</h3>
-        <p class="feature-body">Professional photos and virtual tours for every premium listing.</p>
-      </div>
-      <div class="feature-card fade-up">
-        <div class="feature-icon"><i class="bi bi-headset"></i></div>
-        <h3 class="feature-title">24/7 Support</h3>
-        <p class="feature-body">Our team is available around the clock to help you find your dream home.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== FEATURED AGENTS ====== -->
-<section class="section section-alt">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px;">
-      <span class="section-label">Our Agents</span>
-      <h2 class="section-heading">Meet Our Top Agents</h2>
-      <p class="section-sub" style="margin:0 auto;">Experienced professionals dedicated to finding your perfect property</p>
-    </div>
-    <div class="agents-grid">
-      <!-- Agent 1 -->
-      <div class="agent-card fade-up">
-        <div class="agent-photo-wrap">
-          <img src="assets/agent-1.jpg" alt="Amaka Osei" loading="lazy">
-        </div>
-        <h3 class="agent-name">Amaka Osei</h3>
-        <p class="agent-title">Senior Property Consultant</p>
-        <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Lagos</div>
-        <div class="agent-rating">
-          <span class="stars">★★★★★</span>
-          <span style="font-size:0.8rem;color:#6B6B6B;">4.9</span>
-        </div>
-        <div class="agent-stats">48 active listings</div>
-        <div class="agent-specialty"><span class="tag">Luxury Homes</span></div>
-        <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
-      </div>
-      <!-- Agent 2 -->
-      <div class="agent-card fade-up">
-        <div class="agent-photo-wrap">
-          <img src="assets/agent-2.jpg" alt="Tunde Adeyemi" loading="lazy">
-        </div>
-        <h3 class="agent-name">Tunde Adeyemi</h3>
-        <p class="agent-title">Property Investment Advisor</p>
-        <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Abuja</div>
-        <div class="agent-rating">
-          <span class="stars">★★★★★</span>
-          <span style="font-size:0.8rem;color:#6B6B6B;">4.8</span>
-        </div>
-        <div class="agent-stats">35 active listings</div>
-        <div class="agent-specialty"><span class="tag">Investment Properties</span></div>
-        <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
-      </div>
-      <!-- Agent 3 -->
-      <div class="agent-card fade-up">
-        <div class="agent-photo-wrap">
-          <img src="assets/agent-3.jpg" alt="Ngozi Williams" loading="lazy">
-        </div>
-        <h3 class="agent-name">Ngozi Williams</h3>
-        <p class="agent-title">Residential Sales Expert</p>
-        <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Lagos</div>
-        <div class="agent-rating">
-          <span class="stars">★★★★★</span>
-          <span style="font-size:0.8rem;color:#6B6B6B;">4.9</span>
-        </div>
-        <div class="agent-stats">62 active listings</div>
-        <div class="agent-specialty"><span class="tag">Apartments</span></div>
-        <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
-      </div>
-      <!-- Agent 4 -->
-      <div class="agent-card fade-up">
-        <div class="agent-photo-wrap">
-          <img src="assets/agent-4.jpg" alt="Emeka Nwosu" loading="lazy">
-        </div>
-        <h3 class="agent-name">Emeka Nwosu</h3>
-        <p class="agent-title">Commercial Property Specialist</p>
-        <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Abuja</div>
-        <div class="agent-rating">
-          <span class="stars">★★★★★</span>
-          <span style="font-size:0.8rem;color:#6B6B6B;">4.7</span>
-        </div>
-        <div class="agent-stats">29 active listings</div>
-        <div class="agent-specialty"><span class="tag">Commercial</span></div>
-        <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
-      </div>
-    </div>
-    <a href="agents.html" class="view-all">View All Agents →</a>
-  </div>
-</section>
-
-<!-- ====== TESTIMONIALS ====== -->
-<section class="section section-dark">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px;">
-      <span class="section-label">Testimonials</span>
-      <h2 class="section-heading" style="color:#FFFFFF;">What Our Clients Say</h2>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Haven made finding our family home in Lekki so effortless. The listings are accurate and the agents are genuinely helpful.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-photo"><img src="assets/testimonial-1.jpg" alt="Adaeze Okonkwo" loading="lazy"></div>
-          <div>
-            <div class="testimonial-name">Adaeze Okonkwo</div>
-            <div class="testimonial-info">Bought in Lekki, Lagos</div>
-            <div class="stars" style="font-size:0.8rem;margin-top:2px;">★★★★★</div>
+      <div class="numbered-list">
+        <div class="numbered-item fade-up">
+          <div class="numbered-item__num">01</div>
+          <div class="numbered-item__content">
+            <h3>Verified Listings</h3>
+            <p>Every property on Haven is independently verified by our team. No fake listings, ever — just genuine homes you can trust.</p>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">I was relocating from London to Abuja and found my apartment entirely through Haven. Couldn't have done it without them.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-photo"><img src="assets/testimonial-2.jpg" alt="David Mensah" loading="lazy"></div>
-          <div>
-            <div class="testimonial-name">David Mensah</div>
-            <div class="testimonial-info">Renting in Maitama, Abuja</div>
-            <div class="stars" style="font-size:0.8rem;margin-top:2px;">★★★★★</div>
+        <div class="numbered-item fade-up">
+          <div class="numbered-item__num">02</div>
+          <div class="numbered-item__content">
+            <h3>Expert Local Agents</h3>
+            <p>500+ certified agents across Lagos and Abuja, each with deep local knowledge and a proven track record.</p>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card fade-up">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">The best property platform in Nigeria by far. Professional, fast and completely trustworthy.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-photo"><img src="assets/testimonial-3.jpg" alt="Bola Tinuola" loading="lazy"></div>
-          <div>
-            <div class="testimonial-name">Bola Tinuola</div>
-            <div class="testimonial-info">Bought in Ikoyi, Lagos</div>
-            <div class="stars" style="font-size:0.8rem;margin-top:2px;">★★★★★</div>
+        <div class="numbered-item fade-up">
+          <div class="numbered-item__num">03</div>
+          <div class="numbered-item__content">
+            <h3>High-Quality Photography</h3>
+            <p>Professional photos and virtual tours for every premium listing — so you can explore homes from anywhere.</p>
+          </div>
+        </div>
+        <div class="numbered-item fade-up">
+          <div class="numbered-item__num">04</div>
+          <div class="numbered-item__content">
+            <h3>24/7 Support</h3>
+            <p>Our team is available around the clock to help you navigate your property search from first enquiry to final keys.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== CTA BAND ====== -->
-<section class="section section-alt cta-band">
-  <div class="container">
-    <div class="cta-inner">
-      <div class="fade-up">
-        <h2 class="cta-title">Ready to Find Your<br>Dream Home?</h2>
-        <p class="cta-sub">Join over 50,000 Nigerians who found their perfect property through Haven.</p>
-      </div>
-      <div class="cta-actions fade-up">
-        <a href="listings.html" class="btn btn-primary btn-lg">Browse Properties</a>
-        <a href="agents.html" class="btn btn-outline btn-lg">Talk to an Agent</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== FOOTER ====== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Haven<span class="dot" style="color:#C9A96E;font-size:0.6rem;margin-left:1px;">●</span></div>
-        <p class="footer-tagline">Nigeria's Premier Property Platform</p>
-        <div class="footer-socials">
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+  <!-- ====== FEATURED AGENTS (horizontal slider) ====== -->
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <div class="sh-section-header">
+        <div>
+          <span class="section-label">Our Agents</span>
+          <h2 class="section-heading">Meet Our Top Agents</h2>
+          <p class="section-sub">Experienced professionals dedicated to finding your perfect property</p>
+        </div>
+        <div class="scroll-arrows">
+          <button class="scroll-arrow scroll-arrow--prev" data-target="agents-scroll" aria-label="Scroll left">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+          <button class="scroll-arrow scroll-arrow--next" data-target="agents-scroll" aria-label="Scroll right">
+            <i class="bi bi-arrow-right"></i>
+          </button>
         </div>
       </div>
-      <div>
-        <div class="footer-col-title">Properties</div>
-        <ul class="footer-links">
-          <li><a href="listings.html?location=lagos&type=sale">Buy in Lagos</a></li>
-          <li><a href="listings.html?location=abuja&type=sale">Buy in Abuja</a></li>
-          <li><a href="listings.html?location=lagos&type=rent">Rent in Lagos</a></li>
-          <li><a href="listings.html?location=abuja&type=rent">Rent in Abuja</a></li>
-          <li><a href="listings.html?type=luxury">Luxury Homes</a></li>
-          <li><a href="listings.html?type=new">New Developments</a></li>
-        </ul>
+
+      <div class="scroll-row" id="agents-scroll">
+        <!-- Agent 1 -->
+        <div class="agent-card fade-up">
+          <div class="agent-photo-wrap">
+            <img src="assets/agent-1.jpg" alt="Amaka Osei" loading="lazy">
+          </div>
+          <h3 class="agent-name">Amaka Osei</h3>
+          <p class="agent-title">Senior Property Consultant</p>
+          <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Lagos</div>
+          <div class="agent-rating"><span class="stars">★★★★★</span> <span style="font-size:0.8rem;color:#7A95AB;">4.9</span></div>
+          <div class="agent-stats">48 active listings</div>
+          <div class="agent-specialty"><span class="tag">Luxury Homes</span></div>
+          <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
+        </div>
+        <!-- Agent 2 -->
+        <div class="agent-card fade-up">
+          <div class="agent-photo-wrap">
+            <img src="assets/agent-2.jpg" alt="Tunde Adeyemi" loading="lazy">
+          </div>
+          <h3 class="agent-name">Tunde Adeyemi</h3>
+          <p class="agent-title">Property Investment Advisor</p>
+          <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Abuja</div>
+          <div class="agent-rating"><span class="stars">★★★★★</span> <span style="font-size:0.8rem;color:#7A95AB;">4.8</span></div>
+          <div class="agent-stats">35 active listings</div>
+          <div class="agent-specialty"><span class="tag">Investment Properties</span></div>
+          <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
+        </div>
+        <!-- Agent 3 -->
+        <div class="agent-card fade-up">
+          <div class="agent-photo-wrap">
+            <img src="assets/agent-3.jpg" alt="Ngozi Williams" loading="lazy">
+          </div>
+          <h3 class="agent-name">Ngozi Williams</h3>
+          <p class="agent-title">Residential Sales Expert</p>
+          <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Lagos</div>
+          <div class="agent-rating"><span class="stars">★★★★★</span> <span style="font-size:0.8rem;color:#7A95AB;">4.9</span></div>
+          <div class="agent-stats">62 active listings</div>
+          <div class="agent-specialty"><span class="tag">Apartments</span></div>
+          <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
+        </div>
+        <!-- Agent 4 -->
+        <div class="agent-card fade-up">
+          <div class="agent-photo-wrap">
+            <img src="assets/agent-4.jpg" alt="Emeka Nwosu" loading="lazy">
+          </div>
+          <h3 class="agent-name">Emeka Nwosu</h3>
+          <p class="agent-title">Commercial Property Specialist</p>
+          <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Abuja</div>
+          <div class="agent-rating"><span class="stars">★★★★★</span> <span style="font-size:0.8rem;color:#7A95AB;">4.7</span></div>
+          <div class="agent-stats">29 active listings</div>
+          <div class="agent-specialty"><span class="tag">Commercial</span></div>
+          <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
+        </div>
+        <!-- Agent 5 -->
+        <div class="agent-card fade-up">
+          <div class="agent-photo-wrap">
+            <img src="assets/agent-5.jpg" alt="Fatima Hassan" loading="lazy">
+          </div>
+          <h3 class="agent-name">Fatima Hassan</h3>
+          <p class="agent-title">Luxury Homes Specialist</p>
+          <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Lagos</div>
+          <div class="agent-rating"><span class="stars">★★★★★</span> <span style="font-size:0.8rem;color:#7A95AB;">4.9</span></div>
+          <div class="agent-stats">41 active listings</div>
+          <div class="agent-specialty"><span class="tag">Luxury</span></div>
+          <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
+        </div>
+        <!-- Agent 6 -->
+        <div class="agent-card fade-up">
+          <div class="agent-photo-wrap">
+            <img src="assets/agent-6.jpg" alt="Chioma Eze" loading="lazy">
+          </div>
+          <h3 class="agent-name">Chioma Eze</h3>
+          <p class="agent-title">New Developments Advisor</p>
+          <div class="agent-location"><i class="bi bi-geo-alt-fill"></i> Abuja</div>
+          <div class="agent-rating"><span class="stars">★★★★★</span> <span style="font-size:0.8rem;color:#7A95AB;">4.8</span></div>
+          <div class="agent-stats">33 active listings</div>
+          <div class="agent-specialty"><span class="tag">New Builds</span></div>
+          <a href="agents.html" class="btn btn-outline btn-full btn-sm">Contact Agent</a>
+        </div>
+      </div><!-- /scroll-row -->
+
+      <a href="agents.html" class="view-all">View All Agents →</a>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS (auto-rotating carousel) ====== -->
+  <section class="section testimonial-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <span class="section-label" style="color:var(--gold);">Testimonials</span>
+        <h2 class="section-heading" style="color:#FFFFFF;">What Our Clients Say</h2>
       </div>
-      <div>
-        <div class="footer-col-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="contact.html#about">About Haven</a></li>
-          <li><a href="agents.html">Our Agents</a></li>
-          <li><a href="contact.html">List Your Property</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i> <span>14 Adeola Odeku Street,<br>Victoria Island, Lagos</span></div>
-        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i> <span>+234 (0) 803 HAVEN 0</span></div>
-        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i> <span>hello@haven.ng</span></div>
-        <div class="footer-contact-item"><i class="bi bi-clock-fill"></i> <span>Mon–Fri 8AM–6PM WAT</span></div>
+      <div class="testimonial-carousel">
+        <div class="carousel-track">
+          <!-- Slide 1 -->
+          <div class="carousel-slide active">
+            <div class="carousel-quote-mark">&ldquo;</div>
+            <p class="carousel-text">Haven made finding our family home in Lekki so effortless. The listings are accurate and the agents are genuinely helpful.</p>
+            <div class="carousel-author">
+              <div class="carousel-author-photo">
+                <img src="assets/testimonial-1.jpg" alt="Adaeze Okonkwo" loading="lazy">
+              </div>
+              <div>
+                <div class="carousel-author-name">Adaeze Okonkwo</div>
+                <div class="carousel-author-info">Bought in Lekki, Lagos</div>
+                <div class="stars" style="font-size:0.85rem;margin-top:4px;">★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="carousel-quote-mark">&ldquo;</div>
+            <p class="carousel-text">I was relocating from London to Abuja and found my apartment entirely through Haven. Couldn't have done it without them.</p>
+            <div class="carousel-author">
+              <div class="carousel-author-photo">
+                <img src="assets/testimonial-2.jpg" alt="David Mensah" loading="lazy">
+              </div>
+              <div>
+                <div class="carousel-author-name">David Mensah</div>
+                <div class="carousel-author-info">Renting in Maitama, Abuja</div>
+                <div class="stars" style="font-size:0.85rem;margin-top:4px;">★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <div class="carousel-quote-mark">&ldquo;</div>
+            <p class="carousel-text">The best property platform in Nigeria by far. Professional, fast and completely trustworthy. I recommend Haven to everyone.</p>
+            <div class="carousel-author">
+              <div class="carousel-author-photo">
+                <img src="assets/testimonial-3.jpg" alt="Bola Tinuola" loading="lazy">
+              </div>
+              <div>
+                <div class="carousel-author-name">Bola Tinuola</div>
+                <div class="carousel-author-info">Bought in Ikoyi, Lagos</div>
+                <div class="stars" style="font-size:0.85rem;margin-top:4px;">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /carousel-track -->
+        <div class="carousel-dots" role="tablist" aria-label="Testimonial navigation">
+          <button class="carousel-dot active" data-index="0" role="tab" aria-label="Testimonial 1" aria-selected="true"></button>
+          <button class="carousel-dot" data-index="1" role="tab" aria-label="Testimonial 2" aria-selected="false"></button>
+          <button class="carousel-dot" data-index="2" role="tab" aria-label="Testimonial 3" aria-selected="false"></button>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copyright">© 2026 Haven Properties Ltd. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
+  </section>
+
+  <!-- ====== IMAGE CTA ====== -->
+  <section class="image-cta">
+    <div class="image-cta__bg" style="background-image:url('assets/hero-property.jpg');"></div>
+    <div class="image-cta__overlay"></div>
+    <div class="image-cta__inner fade-up">
+      <span class="section-label" style="color:var(--gold);text-align:center;display:block;">Get Started</span>
+      <h2>Ready to Find Your<br>Dream Home?</h2>
+      <p>Join over 50,000 Nigerians who found their perfect property through Haven.</p>
+      <div class="image-cta__actions">
+        <a href="listings.html" class="btn btn-gold btn-lg">Browse Properties</a>
+        <a href="agents.html" class="btn btn-outline-white btn-lg">Talk to an Agent</a>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Haven<span class="dot" style="color:#FF9900;font-size:0.6rem;margin-left:1px;">●</span></div>
+          <p class="footer-tagline">Nigeria's Premier Property Platform</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Properties</div>
+          <ul class="footer-links">
+            <li><a href="listings.html?location=lagos&type=sale">Buy in Lagos</a></li>
+            <li><a href="listings.html?location=abuja&type=sale">Buy in Abuja</a></li>
+            <li><a href="listings.html?location=lagos&type=rent">Rent in Lagos</a></li>
+            <li><a href="listings.html?location=abuja&type=rent">Rent in Abuja</a></li>
+            <li><a href="listings.html?type=luxury">Luxury Homes</a></li>
+            <li><a href="listings.html?type=new">New Developments</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="contact.html#about">About Haven</a></li>
+            <li><a href="agents.html">Our Agents</a></li>
+            <li><a href="contact.html">List Your Property</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i> <span>14 Adeola Odeku Street,<br>Victoria Island, Lagos</span></div>
+          <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i> <span>+234 (0) 803 HAVEN 0</span></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i> <span>hello@haven.ng</span></div>
+          <div class="footer-contact-item"><i class="bi bi-clock-fill"></i> <span>Mon–Fri 8AM–6PM WAT</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Haven Properties Ltd. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /main-content -->
 
 <!-- Scroll to top -->
 <button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>

@@ -608,4 +608,70 @@
       window.location.href = 'listings.html' + (params.toString() ? '?' + params : '');
     });
   });
+
+  // Split hero search button
+  const heroSearch = document.querySelector('.split-hero-search');
+  if (heroSearch) {
+    const btn = heroSearch.querySelector('.search-btn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const loc = heroSearch.querySelector('input[name="location"]');
+        const params = new URLSearchParams();
+        if (loc && loc.value) params.set('location', loc.value);
+        window.location.href = 'listings.html' + (params.toString() ? '?' + params : '');
+      });
+    }
+  }
+})();
+
+/* ---- HORIZONTAL SCROLL ARROWS ---- */
+(function initScrollArrows() {
+  document.querySelectorAll('.scroll-arrow').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const container = document.getElementById(targetId);
+      if (!container) return;
+      const dir = btn.classList.contains('scroll-arrow--prev') ? -1 : 1;
+      const cardWidth = container.querySelector('.property-card, .agent-card');
+      const scrollAmount = cardWidth ? cardWidth.offsetWidth + 24 : 324;
+      container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+    });
+  });
+})();
+
+/* ---- TESTIMONIAL CAROUSEL ---- */
+(function initTestimonialCarousel() {
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+  const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer = null;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current] && dots[current].classList.remove('active');
+    dots[current] && dots[current].setAttribute('aria-selected', 'false');
+    current = ((index % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current] && dots[current].classList.add('active');
+    dots[current] && dots[current].setAttribute('aria-selected', 'true');
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goTo(parseInt(dot.dataset.index, 10));
+      startAuto();
+    });
+  });
+
+  startAuto();
 })();
