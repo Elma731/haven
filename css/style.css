@@ -3766,6 +3766,40 @@ textarea:focus-visible {
 
 @media (max-width: 768px) {
 
+  /* ── CORE LAYOUT ─────────────────────────────
+     The 2-column grid (1fr 340px) is the primary
+     cause of horizontal overflow — collapse it. */
+  .property-content-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Hide the desktop sticky sidebar — the "Agent"
+     tab panel contains the same contact form */
+  .agent-sidebar {
+    display: none !important;
+  }
+
+  /* Stack the property header (title + price) */
+  .property-header-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .property-price-box { text-align: left; }
+
+  /* Hard stop: nothing on the page may exceed viewport width */
+  html { overflow-x: hidden; }
+  .property-gallery,
+  .property-header,
+  .property-content,
+  .similar-section,
+  .property-content-inner,
+  .property-main {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
   /* 1. ALL SECTIONS: prevent overflow */
   .property-gallery,
   .property-header,
@@ -3878,13 +3912,7 @@ textarea:focus-visible {
     padding: 10px;
   }
 
-  /* 8. AGENT SIDEBAR — remove sticky, full width */
-  .agent-sidebar {
-    position: static;
-  }
-  .agent-sidebar .agent-sidebar-card {
-    width: 100%;
-  }
+  /* 8. AGENT SIDEBAR — hidden on mobile (Agent tab has same form) */
 
   /* 8. AGENT TAB CARD — full width */
   #tab-agent .agent-sidebar-card {
