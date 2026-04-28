@@ -3759,3 +3759,182 @@ textarea:focus-visible {
   .scroll-row .property-card { width: 280px; }
   .scroll-row .agent-card { width: 220px; }
 }
+
+/* ============================================
+   PROPERTY PAGE — MOBILE RESPONSIVE FIXES
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* 1. ALL SECTIONS: prevent overflow */
+  .property-gallery,
+  .property-header,
+  .property-content,
+  .similar-section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* 2. GALLERY — main image 16:9 */
+  .gallery-main .img-container--hero {
+    padding-bottom: 56.25%;
+  }
+
+  /* 2. GALLERY — thumbnails: horizontal scroll row */
+  .gallery-thumbs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+  .gallery-thumbs::-webkit-scrollbar { display: none; }
+  .gallery-thumb {
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  /* 2. GALLERY — view all button: compact */
+  .gallery-view-all {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  /* 3. PROPERTY HEADER — CTA buttons: full width, stacked */
+  .property-cta-row {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  .property-cta-row .btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  /* 3. PROPERTY HEADER — share/save row: left-aligned */
+  .property-meta-row {
+    gap: 16px;
+    justify-content: flex-start;
+  }
+
+  /* 5. PROPERTY FEATURES — 2×2 grid */
+  .property-features-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .property-feature {
+    background: #F0F5FA;
+    border-radius: 8px;
+    padding: 12px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+
+  /* 4. TABS — scrollable bar */
+  .property-tab-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+  .property-tab-list::-webkit-scrollbar { display: none; }
+  .property-tab-btn {
+    flex-shrink: 0;
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    min-height: 44px;
+  }
+
+  /* 6. DETAILS TAB — table-style rows */
+  .details-grid {
+    display: block;
+  }
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #D0DCE8;
+    padding: 10px 0;
+  }
+  .detail-item:last-child { border-bottom: none; }
+  .detail-label { margin-bottom: 0; }
+  .detail-value { text-align: right; }
+
+  /* 7. AMENITIES — 2 columns, compact */
+  .amenities-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .amenity-item {
+    font-size: 0.82rem;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  /* 8. AGENT SIDEBAR — remove sticky, full width */
+  .agent-sidebar {
+    position: static;
+  }
+  .agent-sidebar .agent-sidebar-card {
+    width: 100%;
+  }
+
+  /* 8. AGENT TAB CARD — full width */
+  #tab-agent .agent-sidebar-card {
+    max-width: 100% !important;
+  }
+
+  /* 8. DIRECT CONTACT — phone & WhatsApp side by side, Send Message full width */
+  .sidebar-direct-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .sidebar-direct-contact .sidebar-contact-link {
+    display: none;
+  }
+  .sidebar-direct-contact .btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    min-height: 44px;
+  }
+
+  /* 9. CONTACT FORM INPUTS — full width */
+  .contact-form .form-group input,
+  .contact-form .form-group select,
+  .contact-form .form-group textarea {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  /* 10. SIMILAR PROPERTIES — single column */
+  .similar-section .properties-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* 11. MAP — reduced height */
+  .property-map iframe {
+    height: 250px;
+    border-radius: 8px;
+  }
+
+  /* 12. BREADCRUMB — scrollable */
+  .breadcrumb-list {
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    font-size: 0.78rem;
+    padding-bottom: 2px;
+  }
+  .breadcrumb-list::-webkit-scrollbar { display: none; }
+}
