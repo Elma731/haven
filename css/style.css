@@ -3767,11 +3767,31 @@ textarea:focus-visible {
 @media (max-width: 768px) {
 
   /* ── CORE LAYOUT ─────────────────────────────
-     The 2-column grid (1fr 340px) is the primary
-     cause of horizontal overflow — collapse it. */
+     Root cause: CSS Grid 1fr uses minmax(auto,1fr).
+     The "auto" min lets the track grow to the
+     min-content of its child (≈500px from the
+     nowrap tab bar). Fix: min-width:0 on grid items
+     collapses the auto minimum to 0 so 1fr = 100%. */
   .property-content-inner {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+  .property-content-inner > div {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Same grid-blowout fix for the property header */
+  .property-header-inner > div {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Tab list: needs explicit width so overflow-x:auto
+     scrolls WITHIN the container rather than sizing to content */
+  .property-tab-list {
+    width: 100%;
+    min-width: 0;
   }
 
   /* Hide the desktop sticky sidebar — the "Agent"
@@ -3787,20 +3807,8 @@ textarea:focus-visible {
   }
   .property-price-box { text-align: left; }
 
-  /* Hard stop: nothing on the page may exceed viewport width */
+  /* Hard stop on all sections */
   html { overflow-x: hidden; }
-  .property-gallery,
-  .property-header,
-  .property-content,
-  .similar-section,
-  .property-content-inner,
-  .property-main {
-    max-width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-
-  /* 1. ALL SECTIONS: prevent overflow */
   .property-gallery,
   .property-header,
   .property-content,
@@ -3875,6 +3883,9 @@ textarea:focus-visible {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     white-space: nowrap;
+    width: 100%;
+    min-width: 0;
+    display: block;
   }
   .property-tab-list::-webkit-scrollbar { display: none; }
   .property-tab-btn {
@@ -3882,11 +3893,21 @@ textarea:focus-visible {
     padding: 12px 16px;
     font-size: 0.82rem;
     min-height: 44px;
+    display: inline-flex;
+  }
+
+  /* Tab panel content must not overflow its container */
+  .property-tab-panel {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   /* 6. DETAILS TAB — table-style rows */
   .details-grid {
     display: block;
+    width: 100%;
   }
   .detail-item {
     display: flex;
@@ -3896,10 +3917,12 @@ textarea:focus-visible {
     border-radius: 0;
     border-bottom: 1px solid #D0DCE8;
     padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .detail-item:last-child { border-bottom: none; }
-  .detail-label { margin-bottom: 0; }
-  .detail-value { text-align: right; }
+  .detail-label { margin-bottom: 0; flex-shrink: 0; }
+  .detail-value { text-align: right; padding-left: 12px; word-break: break-word; }
 
   /* 7. AMENITIES — 2 columns, compact */
   .amenities-grid {
