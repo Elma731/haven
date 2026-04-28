@@ -49,23 +49,23 @@
         gap: 8px !important;
       }
 
-      /* ── Tab bar: scroll horizontally instead of overflowing ── */
+      /* ── Tab bar: equal-width flex tabs that all fit in viewport ── */
       .property-tab-list {
-        display: block !important;
+        display: flex !important;
         width: 100% !important;
-        overflow-x: auto !important;
-        overflow-y: visible !important;
-        white-space: nowrap !important;
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none !important;
+        flex-wrap: nowrap !important;
       }
-      .property-tab-list::-webkit-scrollbar { display: none !important; }
       .property-tab-btn {
-        display: inline-flex !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-        padding: 12px 14px !important;
-        font-size: 0.82rem !important;
+        flex: 1 1 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        white-space: normal !important;
+        min-width: 0 !important;
+        padding: 10px 4px !important;
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
       }
 
       /* ── Tab panel content: constrained to viewport ── */
