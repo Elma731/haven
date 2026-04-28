@@ -10,6 +10,124 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta name="theme-color" content="#1A2E42">
+  <style>
+    @media (max-width: 768px) {
+      /* ── Stop all horizontal overflow ── */
+      html, body { overflow-x: hidden !important; }
+
+      /* ── Collapse 2-col layout (1fr 340px) → single column ── */
+      .property-content-inner {
+        display: block !important;
+        width: 100% !important;
+      }
+      /* ── Hide desktop sticky sidebar (Agent tab has same form) ── */
+      .agent-sidebar { display: none !important; }
+
+      /* ── Stack property header: title above price ── */
+      .property-header-inner {
+        display: block !important;
+        width: 100% !important;
+      }
+      .property-price-box { text-align: left !important; }
+
+      /* ── Price font: prevent it overflowing on narrow screens ── */
+      .property-price { font-size: 1.6rem !important; word-break: break-all !important; }
+      .property-main-title { font-size: 1.4rem !important; }
+
+      /* ── CTA buttons: stack vertically, full width ── */
+      .property-cta-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+      }
+      .property-cta-row .btn { width: 100% !important; justify-content: center !important; }
+
+      /* ── Feature pills: 2×2 grid ── */
+      .property-features-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+      }
+
+      /* ── Tab bar: scroll horizontally instead of overflowing ── */
+      .property-tab-list {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+      }
+      .property-tab-list::-webkit-scrollbar { display: none !important; }
+      .property-tab-btn {
+        display: inline-flex !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        padding: 12px 14px !important;
+        font-size: 0.82rem !important;
+      }
+
+      /* ── Tab panel content: constrained to viewport ── */
+      .property-tab-panel {
+        display: none;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+      .property-tab-panel.active { display: block !important; }
+
+      /* ── Details tab: label left, value right, no overflow ── */
+      .details-grid { display: block !important; width: 100% !important; }
+      .detail-item {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid #D0DCE8 !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+      }
+      .detail-label { flex-shrink: 0 !important; margin-bottom: 0 !important; }
+      .detail-value { text-align: right !important; padding-left: 10px !important; word-break: break-word !important; }
+
+      /* ── Amenities: 2 columns ── */
+      .amenities-grid { grid-template-columns: 1fr 1fr !important; }
+
+      /* ── Gallery thumbnails: scroll row ── */
+      .gallery-thumbs {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 8px !important;
+        scrollbar-width: none !important;
+      }
+      .gallery-thumb { min-width: 76px !important; flex-shrink: 0 !important; }
+
+      /* ── Map ── */
+      .property-map iframe { height: 240px !important; }
+
+      /* ── Agent tab contact form ── */
+      #tab-agent .agent-sidebar-card { max-width: 100% !important; width: 100% !important; }
+      .contact-form .form-group input,
+      .contact-form .form-group textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* ── Similar properties: single column ── */
+      .similar-section .properties-grid { grid-template-columns: 1fr !important; }
+
+      /* ── Breadcrumb: scrollable ── */
+      .breadcrumb-list {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scrollbar-width: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
